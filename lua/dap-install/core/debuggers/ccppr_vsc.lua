@@ -28,6 +28,13 @@ M.config = {
 			end,
 			cwd = "${workspaceFolder}",
 			stopOnEntry = true,
+      setupCommands = {
+        {
+          description =  'enable pretty printing',
+          text = '-enable-pretty-printing',
+          ignoreFailures = false
+        },
+      },
 		},
     {
       name = "Attach process",
@@ -57,6 +64,13 @@ M.config = {
 			program = function()
 				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 			end,
+      setupCommands = {
+        {
+          description =  'enable pretty printing',
+          text = '-enable-pretty-printing',
+          ignoreFailures = false
+        },
+      },
 		},
 	},
 }
