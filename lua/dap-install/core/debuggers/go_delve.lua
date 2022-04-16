@@ -19,7 +19,7 @@ M.config = {
 		local port = 38697
 		local opts = {
 			stdio = { nil, stdout },
-			args = { "dap", "-l", "127.0.0.1:" .. port },
+			args = { "dap", "--check-go-version=false", "--listen=127.0.0.1:" .. port },
 			detached = true,
 		}
 		handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
