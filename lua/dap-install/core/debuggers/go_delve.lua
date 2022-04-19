@@ -41,16 +41,9 @@ M.config = {
 		-- Wait for delve to start
 		vim.defer_fn(function()
 			callback({ type = "server", host = "127.0.0.1", port = port })
-		end, 100)
+		end, 300)
 	end,
 	configurations = {
-		{
-			type = "go",
-			name = "Attach",
-			request = "attach",
-			processId = require("dap.utils").pick_process,
-			program = "${workspaceFolder}",
-		},
 		{
 			type = "go",
 			name = "Debug curr file",
@@ -76,6 +69,13 @@ M.config = {
 			name = "Debug test",
 			request = "launch",
 			mode = "test",
+			program = "${workspaceFolder}",
+		},
+		{
+			type = "go",
+			name = "Attach",
+			request = "attach",
+			processId = require("dap.utils").pick_process,
 			program = "${workspaceFolder}",
 		},
 	},
