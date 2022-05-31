@@ -79,7 +79,7 @@ local install_string
 if proxy == nil or proxy == "" then
   -- TODO: check os type and download corrsponding vsix
 	install_string = [[
-		wget $(curl -s https://api.github.com/repos/microsoft/vscode-cpptools/releases/tags/1.7.1 | grep browser_ | cut -d\" -f 4 | grep linux.vsix)
+    wget github.com/microsoft/vscode-cpptools/releases/latest/download/cpptools-linux.vsix
 		mv cpptools-linux.vsix cpptools-linux.zip
 		unzip cpptools-linux.zip
 		chmod +x extension/debugAdapters/bin/OpenDebugAD7
@@ -89,7 +89,7 @@ else
 	install_string = string.format(
   -- TODO: check os type and download corrsponding vsix
 		[[
-      wget $(curl -s https://api.github.com/repos/microsoft/vscode-cpptools/releases/tags/1.7.1 | grep browser_ | cut -d\" -f 4 | grep linux.vsix)
+      wget github.com/microsoft/vscode-cpptools/releases/latest/download/cpptools-linux.vsix
       mv cpptools-linux.vsix cpptools-linux.zip
       unzip cpptools-linux.zip
       chmod +x extension/debugAdapters/bin/OpenDebugAD7
